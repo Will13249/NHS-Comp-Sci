@@ -1,16 +1,11 @@
 var index = 0;
-var indx;
-var ind;
-var wrong1;
-var wrong2;
-var wrong3;
 var countries;
-var timeleft = 10;
+var timeleft = 15;
 var correctanswer;
-var correctbutton;
+var score = 0;
 
 countries = ["China", "UnitedStates", "France", "Somalia", "Germany", "Argentina", "Canada", "Russia"];
-var buttons = ["button2", "button3", "button4", "button5"];     
+     
 
 
 
@@ -23,23 +18,21 @@ function updateScreen() {
   index = randomNumber(0, countries.length - 1);
   setImageURL("image2", countries[index] + ".jpg");
   correctanswer = countries[index];
-  indx = randomNumber(0, buttons.length - 1);
-  setProperty(buttons[indx], "text", countries[index]);
-  correctbutton = buttons[indx];
-  wrong1 = randomNumber(0, countries.length - 1);
-  wrong2 = randomNumber(0, countries.length - 1);
-  wrong3 = randomNumber(0, countries.length - 1);
-  while(wrong1 == countries[index]){
-    wrong1 = randomNumber(0, countries.length - 1);
-  }
-  while(wrong2 == countries[index] || wrong2 == wrong1) {
-    wrong2 = randomNumber(0, countries.length - 1);
-  }
-  while(wrong3 == countries[index] || wrong3 == wrong2 == wrong3 == wrong2) {
-    wrong3 = randomNumber(0, countries.length - 1);
-  }
-  setProperty("button2", "text", wrong1);
-}
+  setNumber("label9", score);
+    }
+
+
+onEvent("button2", "click", function( ) {
+    if(getText("text_input1") == countries[index]) {
+    setScreen("screen3");  
+    score = score + 50;
+    }
+    else {
+      setScreen("screen4");
+    score = score - 50;
+    }
+});
+
 
 onEvent("label7", "click", function( ) {
   setScreen("screen2");
