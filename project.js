@@ -4,7 +4,7 @@ var timeleft = 15;
 var correctanswer;
 var score = 0;
 
-countries = ["China", "UnitedStates", "France", "Somalia", "Germany", "Argentina", "Canada", "Russia"];
+countries = ["China", "UnitedStates", "France", "Somalia", "Germany", "Argentina", "Canada", "Russia", "Mexico", "Norway", "Spain", "Turkey", "Australia", "Brazil", "Greece", "India", "Ireland", "Japan"];
      
 
 
@@ -19,6 +19,8 @@ function updateScreen() {
   setImageURL("image2", countries[index] + ".jpg");
   correctanswer = countries[index];
   setNumber("label9", score);
+  timeleft = 15;
+  setText("text_input1", "");
     }
 
 
@@ -36,9 +38,11 @@ onEvent("button2", "click", function( ) {
 
 onEvent("label7", "click", function( ) {
   setScreen("screen2");
+  updateScreen();
 });
 onEvent("label8", "click", function( ) {
   setScreen("screen2");
+  updateScreen();
 });
 
 
@@ -50,6 +54,7 @@ if (timeleft == 0) {
  setScreen("screen4");
 }
 });
+
 
 
 // This is my project repository file
