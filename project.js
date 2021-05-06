@@ -1,15 +1,20 @@
 var index = 0;
 var countries;
 var timeleft = 15;
+var timelet = 60;
 var correctanswer;
 var score = 0;
 
-countries = ["China", "UnitedStates", "France", "Somalia", "Germany", "Argentina", "Canada", "Russia", "Mexico", "Norway", "Spain", "Turkey", "Australia", "Brazil", "Greece", "India", "Ireland", "Japan"];
+countries = ["China", "UnitedStates", "France", "Somalia", "Germany", "Argentina", "Canada", "Russia", "Mexico", "Norway", "Spain", "Turkey", "Australia", "Brazil", "Greece", "India", "Ireland", "Japan", "Belgium", "Egypt", "Iceland", "Italy", "NewZealand", "NorthKorea", "Portugal", "Switzerland", "Sweden"];
      
 
 
 
 onEvent("button1", "click", function( ) {
+  setScreen("screen5");
+});
+
+onEvent("button3", "click", function( ) {
   setScreen("screen2");
   updateScreen();
 });
@@ -17,6 +22,7 @@ onEvent("button1", "click", function( ) {
 function updateScreen() {
   index = randomNumber(0, countries.length - 1);
   setImageURL("image2", countries[index] + ".jpg");
+  console.log(countries[index]);
   correctanswer = countries[index];
   setNumber("label9", score);
   timeleft = 15;
@@ -55,6 +61,15 @@ if (timeleft == 0) {
 }
 });
 
+timedLoop(1000, function() {
+  timelet = timelet-1;
+  setText("Timer2", + timelet);
+if (timelet == 0) {
+ stopTimedLoop();
+ setScreen("screen6");
+ setText("label17", getText("label9"));
+}
+});
 
 
 // This is my project repository file
