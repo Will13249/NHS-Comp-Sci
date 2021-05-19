@@ -1,0 +1,36 @@
+onEvent("button1", "click", function( ) {
+  setScreen("screen2");
+});
+onEvent("button2", "click", function( ) {
+  setScreen("screen3");
+});
+onEvent("button4", "click", function( ) {
+  setScreen("screen2");
+});
+onEvent("button5", "click", function( ) {
+  setScreen("screen6");
+});
+onEvent("button6", "click", function( ) {
+  setScreen("screen5");
+});
+onEvent("button3", "click", function( ) {
+  setScreen("screen4");
+});
+onEvent("button10", "click", function( ) {
+  setScreen("screen8");
+});
+onEvent("button8", "click", function( ) {
+  setScreen("screen7");
+});
+onEvent("button11", "click", function( ) {
+  setScreen("screen9");
+});
+onEvent("button12", "click", function( ) {
+  setScreen("screen11");
+});
+onEvent("button13", "click", function( ) {
+  setScreen("screen11");
+});
+onEvent("button9", "click", function( ) {
+  setScreen("screen10");
+});
